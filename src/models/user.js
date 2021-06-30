@@ -9,14 +9,11 @@ const User = mongoose.model('User', {
         type: String,
         unique: true,
         required: true,
-        minLength: 3,
-        maxLength: 16
     },
     password: {
         type: String,
         required: true,
         unique: true,
-        minLength: 8
     },
     email: {
         type: String,
