@@ -25,7 +25,6 @@ class UserController {
                 res.sendStatus(404);
                 return;
             }
-            // const { _id, name, avatar } = foundUser;
             res.send(foundUser);
         }
         catch (err) {
