@@ -1,47 +1,48 @@
-const RightAnswer = require('../models/rightAnswer');
-const WrongAnswer = require('../models/wrongAnswer');
+const Answer = require('../models/Answer');
+// const Answer = require('../models/Answer');
 
 
 class AnswerController {
 
-    static async createRightAnswer(req, res) {
+    static async createAnswer(req, res) {
         try {
-            const answer = new RightAnswer({
-                answer: req.body.answer
+            const answer = new Answer({
+                answer: req.body.answer,
+                isCorrect: req.body.isCorrect
             })
             const newAnswer = answer.save();
             res.status(201).send(newAnswer);
         }
-        catch(err) {
+        catch (err) {
             console.log(err);
             res.sendStatus(400);
         }
     }
 
-    static async createWrongAnswer(req, res) {
-        try {
-            const answer = new WrongAnswer({
-                answer: req.body.answer
-            })
-            const newAnswer = answer.save();
-            res.status(201).send(newAnswer);
-        }
-        catch(err) {
-            console.log(err);
-            res.sendStatus(400);
-        }
-    }
+    // static async createAnswer(req, res) {
+    //     try {
+    //         const answer = new Answer({
+    //             answer: req.body.answer
+    //         })
+    //         const newAnswer = answer.save();
+    //         res.status(201).send(newAnswer);
+    //     }
+    //     catch(err) {
+    //         console.log(err);
+    //         res.sendStatus(400);
+    //     }
+    // }
 
-    static async getAllWrongAnswers(req, res) {
+    static async getAllAnswers(req, res) {
         console.log('starting to find')
         try {
-            let answers = await WrongAnswer.find();
+            let answers = await Answer.find();
             if (answers) {
                 console.log('we got answers')
                 res.send(answers);
             }
         }
-        catch(err) {
+        catch (err) {
             console.log(err);
             res.sendStatus(500);
         }

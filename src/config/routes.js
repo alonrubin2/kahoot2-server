@@ -1,16 +1,17 @@
-const express = require('express'); 
+const express = require('express');
 const routes = express.Router();
 const AnswersController = require('../controllers/answers.controller');
+const QuestionController = require('../controllers/questions.controller');
 const UserController = require('../controllers/user.controller');
 
 
 // create
-routes.put('/right-answer', AnswersController.createRightAnswer);
-routes.put('/wrong-answer', AnswersController.createWrongAnswer);
+routes.put('/answer', AnswersController.createAnswer);
 routes.put('/user', UserController.createUser)
+routes.put('/question', QuestionController.createQuestion)
 
 // get
-routes.get('/wrong-answer', AnswersController.getAllWrongAnswers);
+routes.get('/answer', AnswersController.getAllAnswers);
 routes.get('/user', UserController.findUserByName);
 
 // edit

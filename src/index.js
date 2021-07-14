@@ -4,8 +4,8 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const routes = require('./config/routes');
 const Quiz = require('./models/quiz');
-const RightAnswer = require('./models/rightAnswer');
-const WrongAnswer = require('./models/wrongAnswer');
+const Answer = require('./models/Answer');
+// const Answer = require('./models/Answer');
 // **** we should transition to axios at some point
 // const axios = require('axios').default;
 

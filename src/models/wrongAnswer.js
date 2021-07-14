@@ -1,10 +1,10 @@
-const mongoose = require('mongoose');
+// const mongoose = require('mongoose');
 
 
-const WrongAnswer = mongoose.model('WrongAnswer', {
-    answer: {
-        type: String
-    }
-})
+// const Answer = mongoose.model('Answer', {
+//     answer: {
+//         type: String
+//     }
+// })
 
-module.exports = WrongAnswer;
+// module.exports = Answer;
