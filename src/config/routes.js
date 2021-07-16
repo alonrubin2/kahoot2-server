@@ -8,7 +8,7 @@ const UserController = require('../controllers/user.controller');
 // create
 routes.put('/answer', AnswersController.createAnswer);
 routes.put('/user', UserController.createUser)
-routes.put('/question', QuestionController.createQuestion)
+routes.put('/create-question', QuestionController.createQuestion)
 
 // get
 routes.get('/answer', AnswersController.getAllAnswers);
