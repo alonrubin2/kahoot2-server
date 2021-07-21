@@ -27,8 +27,8 @@ mongoose.connect('mongodb://localhost/kahoot', {
 });
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', ()=> {
-    app.listen(port, ()=> {
+db.once('open', () => {
+    app.listen(port, () => {
         console.log('Listening om http://localhost:' + port);
     });
 });

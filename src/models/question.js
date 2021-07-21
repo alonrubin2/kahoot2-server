@@ -7,8 +7,8 @@ const Question = mongoose.model('Question', {
         required: true
     },
     answers: {
-        type: [mongoose.ObjectId],
-        required: true
+        type: Object,
+        // required: true
     }
 })
 
